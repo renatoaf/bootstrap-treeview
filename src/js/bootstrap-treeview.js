@@ -69,7 +69,9 @@
 		onNodeUnchecked: undefined,
 		onNodeUnselected: undefined,
 		onSearchComplete: undefined,
-		onSearchCleared: undefined
+		onSearchCleared: undefined,
+
+		onRender: undefined
 	};
 
 	_default.options = {
@@ -604,6 +606,10 @@
 							.append(tag)
 						);
 				});
+			}
+
+			if (_this.options.onRender) {
+				_this.options.onRender(node, treeItem);
 			}
 
 			// Add item to the tree
